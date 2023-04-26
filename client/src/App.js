@@ -9,7 +9,7 @@ import Checkout from "./components/Checkout";
 import Confirmation from "./components/Confirmation";
 import "./styles/index.css";
 
-const promise = loadStripe(process.env.REACT_APP_PK);
+const promise = loadStripe(`${process.env.REACT_APP_PK}`);
 
 export default function App() {
   const [cart, setCart] = useState();

@@ -20,7 +20,7 @@ export default function Cart(props) {
   };
 
   const displayPrice = (amount) => {
-    return amount.toLocaleString("en-US", {
+    return amount.toLocaleString("en", {
       style: "currency",
       currency: props.currency,
     });
@@ -40,7 +40,7 @@ export default function Cart(props) {
                   src={item.variant.images[0].url}
                 />
               </div>
-              <div className="col-4">{item.name["en-US"]}</div>
+              <div className="col-4">{item.name["en"]}</div>
               <div className="col-2">
                 {displayPrice(
                   (item.price.value.centAmount / 100).toFixed(

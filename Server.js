@@ -182,13 +182,13 @@ app.post("/create-checkout-session", async (req, res) => {
         currency: currency,
         unit_amount: price,
         product_data: {
-          name: item.name["en-US"],
+          name: item.name["en"],
           images: [item.variant.images[0].url],
         },
       },
       quantity: 1,
     });
-    summary += item.id + "  [" + item.name["en-US"] + "] ";
+    summary += item.id + "  [" + item.name["en"] + "] ";
   });
 
   try {
@@ -218,7 +218,7 @@ app.post("/create-checkout-session", async (req, res) => {
       payload.shipping_address_collection.allowed_countries = ["US"];
     }
     if (currency === "eur") {
-      payload.payment_method_types = ["card", "sofort", "giropay"];
+      payload.payment_method_types = ["card"];
       payload.shipping_address_collection.allowed_countries = [
         "FR",
         "NL",
@@ -294,7 +294,7 @@ app.post("/create-payment-intent", async (req, res) => {
   let summary = "";
   cart.lineItems.forEach((item) => {
     const price = item.price.value.centAmount;
-    summary += item.id + "  [" + item.name["en-US"] + "] ";
+    summary += item.id + "  [" + item.name["en"] + "] ";
   });
 
   const payload = {

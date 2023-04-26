@@ -85,7 +85,7 @@ export default function ProductCard(props) {
           />
           <div className="card-body" style={{ paddingBottom: 0 }}>
             <h5 style={styles.name}>
-              {props.product.masterData.current.name["en-US"]}
+              {props.product.masterData.current.name["en"]}
             </h5>
             {/* <p style={{ paddingTop: '20px' }}>{props.product.description}</p> */}
             <p>
@@ -98,7 +98,7 @@ export default function ProductCard(props) {
       </div>
       <Modal show={show} centered onHide={handleClose} size="lg">
         <Modal.Header style={styles.nameModal}>
-          {props.product.masterData.current.name["en-US"]}
+          {props.product.masterData.current.name["en"]}
           <FontAwesomeIcon
             icon={faTimes}
             style={{ cursor: "pointer" }}
@@ -116,7 +116,7 @@ export default function ProductCard(props) {
               />
             </div>
             <div className="col-5">
-              <p>{props.product.masterData.current.description["en-US"]}</p>
+              <p>{ props.product.masterData.current.description ?props.product.masterData.current.description["en"]:"no description"}</p>
             </div>
           </div>
         </Modal.Body>
