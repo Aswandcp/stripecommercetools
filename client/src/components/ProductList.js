@@ -9,7 +9,7 @@ export default function ProductList(props) {
   useEffect(() => {
     setIsLoaded(false);
     setProducts([]);
-    fetch("/products/" + props.currency)
+    fetch(REACT_APP_API_URL+"/products/" + props.currency)
       .then((res) => res.json())
       .then((obj) => {
         setProducts(obj);
