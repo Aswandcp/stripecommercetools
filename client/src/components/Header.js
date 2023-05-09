@@ -45,7 +45,11 @@ export default function Header(props) {
 
   // On intitial load only, retrieve branding details
   useEffect(() => {
+<<<<<<< HEAD
     fetch( REACT_APP_API_URL+"/settings/")
+=======
+    fetch(REACT_APP_API_URL+"/settings/")
+>>>>>>> 178b6ea30f82a462996fdec61790dad8275bd14b
       .then((res) => res.json())
       .then((data) => {
         setShopName(data.shop_name);
