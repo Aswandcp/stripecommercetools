@@ -24,11 +24,11 @@ export default function App() {
           "Content-Type": "application/json",
         },
       })
-        // .then((res) => res.json())
+        .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          // setCart(data);
-          // updateCart(data.id, obj.id, null, 1);
+          setCart(data);
+          updateCart(data.id, obj.id, null, 1);
         });
     } else {
       updateCart(
