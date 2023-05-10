@@ -24,7 +24,7 @@ export default function App() {
           "Content-Type": "application/json",
         },
       })
-        .then((res) => res.json())
+        // .then((res) => res.json())
         .then((data) => {
           setCart(data);
           updateCart(data.id, obj.id, null, 1);
