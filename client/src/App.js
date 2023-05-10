@@ -18,7 +18,7 @@ export default function App() {
 
   const addToCart = async (obj) => {
     if (!cart) {
-      fetch("/cart", {
+      fetch(process.env.REACT_APP_API_URL+"/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function App() {
   };
 
   const updateCart = async (cartId, productId, variantId, version) => {
-    fetch("/cart/line-item", {
+    fetch(process.env.REACT_APP_API_URL+"/cart/line-item", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

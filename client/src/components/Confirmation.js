@@ -26,7 +26,7 @@ export default function Confirmation(props) {
 
   useEffect(() => {
     if (id) {
-      fetch("/session/" + id)
+      fetch(process.env.REACT_APP_API_URL+"/session/" + id)
         .then((res) => res.json())
         .then((obj) => {
           setPM(obj.receipt);
