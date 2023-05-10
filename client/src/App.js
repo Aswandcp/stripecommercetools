@@ -26,8 +26,9 @@ export default function App() {
       })
         // .then((res) => res.json())
         .then((data) => {
-          setCart(data);
-          updateCart(data.id, obj.id, null, 1);
+          console.log(data);
+          // setCart(data);
+          // updateCart(data.id, obj.id, null, 1);
         });
     } else {
       updateCart(
