@@ -24,10 +24,28 @@ export default function App() {
           "Content-Type": "application/json",
         },
       })
-        .then((res) => res.json())
+        // .then((res) => res.json())
+        // .then((data) => {
+        //   setCart(data);
+        //   updateCart(data.id, obj.id, null, 1);
+        // });
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return res.json();
+        })
         .then((data) => {
-          setCart(data);
-          updateCart(data.id, obj.id, null, 1);
+          if (data) {
+            setCart(data);
+            updateCart(data.id, obj.id, null, 1);
+          } else {
+            throw new Error('Empty JSON response');
+          }
+        })
+        .catch((error) => {
+          // Handle any errors that occur during the fetch or JSON parsing
+          console.error('Error:', error);
         });
     } else {
       updateCart(
