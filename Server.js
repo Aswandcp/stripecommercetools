@@ -196,8 +196,8 @@ app.post("/create-checkout-session", async (req, res) => {
       mode: "payment",
       customer: ctCustomer.externalId,
       line_items: items,
-      success_url: REACT_APP_BASE_URL + "/confirm?checkout_session={CHECKOUT_SESSION_ID}",
-      cancel_url: REACT_APP_BASE_URL,
+      success_url: process.env.REACT_APP_URL + "/confirm?checkout_session={CHECKOUT_SESSION_ID}",
+      cancel_url: process.env.REACT_APP_URL,
       metadata: { summary: summary },
       payment_intent_data:{
         metadata:{
