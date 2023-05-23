@@ -24,12 +24,12 @@ export default function CheckoutHosted(props) {
         currency: props.currency,
       }),
     });
-    const session = await response.json();
+    // const session = await response.json();
 
 
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.sessionId,
-    });
+    // const result = await stripe.redirectToCheckout({
+    //   sessionId: session.sessionId,
+    // });
   };
 
   return (
